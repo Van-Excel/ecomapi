@@ -1,0 +1,90 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log.*
+*.out
+*.err
+
+# Environment files
+.env
+.env.*.local
+.env.local
+.env.test.local
+.env.production.local
+
+# Production files
+/build
+/dist
+/out
+
+# Temporary files and caches
+.tmp/
+.cache/
+.cache-loader
+.idea/
+.vscode/
+.history/
+.DS_Store
+Thumbs.db
+
+# Testing
+/coverage
+/.nyc_output
+*.test.js
+*.spec.js
+junit.xml
+.nyc_output/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+.idea/
+.vscode/
+
+# Miscellaneous
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+*.tsbuildinfo
+__pycache__/
+node_repl_history
+*.pid
+*.seed
+*.pid.lock
+
+# PM2 logs
+pids/
+*.pid
+*.seed
+*.pid.lock
+logs/
+
+# ESLint cache
+.eslintcache
+
+# Sentry CLI
+.sentryclirc
+
+# Prisma
+/prisma/.env
+.prisma
