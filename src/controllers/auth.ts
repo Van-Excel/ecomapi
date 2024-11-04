@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
 import { prismaClient } from "..";
 import {compareSync, hashSync} from 'bcrypt'
+import * as jwt from 'jsonwebtoken'
+import { JWT_SECRET} from "../secrets";
 
 
 
 
-// need to use transactions
-// better error handling
+
 export const signup = async (req:Request, res:Response) => {
     const {email, password, name} = req.body
     let user = await prismaClient.user.findFirst({ where: { email}});
@@ -35,6 +36,11 @@ export const login = async (req:Request, res:Response) => {
     if (!compareSync(password, user.password)) {
         throw Error('Incorrect password');
     }
-    res.json(user)
+    
+    const token = jwt.sign({
+        userId: user.id
+    }, JWT_SECRET)
+
+    res.json({ user,  token})
 
  }
