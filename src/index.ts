@@ -1,13 +1,24 @@
 import express, {Express, Request, Response} from 'express'
+import { PORT } from './secrets'
+import rootRouter from './routes'
+import { PrismaClient } from '@prisma/client'
 
 
 const app: Express = express()
-const PORT = 3000
 
 
-app.get('/' ,(req: Request, res:Response) => {
-    res.send('app is working')
+
+
+app.use(express.json())
+
+app.use('/api',rootRouter)
+
+
+export const prismaClient = new PrismaClient({
+    log:['query']
 })
+
+
 
 app.listen(PORT, () => {
     console.log('Server is listening')
